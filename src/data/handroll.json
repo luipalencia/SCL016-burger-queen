@@ -1,0 +1,30 @@
+{
+  "name": "Handrolls",
+  "items": [
+    {
+      "title": "Pollo, queso y cebollin",
+      "image": "./images/pollo.jpg",
+      "cost": "1000"
+    },
+    {
+      "title": "Kanikama, queso y cebollin",
+      "image": "./images/kanikama.png",
+      "cost": "1000"
+    },
+    {
+      "title": "Camaron queso y cebollin",
+      "image": "./images/queso.jpg",
+      "cost": "2500"
+    },
+    {
+      "title": "Kanikama, con champiñon queso y cebollin",
+      "image": "./images/champignon.jpeg",
+      "cost": "3000"
+    },
+    {
+      "title": "Camarón con salmón queso y cebollin",
+      "image": "./images/camaron.jpg",
+      "cost": "3500"
+    }
+  ]
+}

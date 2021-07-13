@@ -1,0 +1,35 @@
+{
+  "name": "Promociones",
+  "items": [
+    {
+      "title": "Suko 20 piezas",
+      "image": "./images/Suko.jpeg",
+      "cost": "5990"
+    },
+    {
+      "title": "Ninmae 30 piezas",
+      "image": "./images/Ninmae.jpeg",
+      "cost": "7490"
+    },
+    {
+      "title": "Mar y Tierra 30 piezas",
+      "image": "./images/marytierra.jpe",
+      "cost": "8990"
+    },
+    {
+      "title": "Tachi 60 piezas",
+      "image": "./images/Tachi.jpg",
+      "cost": "13990"
+    },
+    {
+      "title": "Tokuni 70  piezas",
+      "image": "./images/Tokuni.jpeg",
+      "cost": "15990"
+    },
+    {
+      "title": "Bikkuri rolls  100 piezas",
+      "image": "./images/Bikkuri.jpeg",
+      "cost": "24990"
+    }
+  ]
+}

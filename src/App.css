@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+#root {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.orders_container {
+  display: flex;
+  height: auto;
+  flex-flow: wrap;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn_group {
+  height: fit-content;
+  margin: 0.2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-danger {
+  background-color: red !important; 
+  color: white !important;
+}
+
+.home_images {
+width: 19rem;
+height: 12rem;
+}
+
+.orders_group {
+  margin: 1em;
+  padding: 1em;
+  height: max-content;
+}
+
+.header {
+  display: flex;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 27%,
+    rgba(251, 0, 0, 1) 99%
+  );
+  width: -webkit-fill-available;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header_date,
+.btn_group--menu {
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header_logo {
+  width: 7em;
+  margin: 1rem;
+  height: auto;
+}
+.home_icons {
   display: flex;
   flex-direction: column;
+  width: -webkit-fill-available;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.mt-3.view_menu--options {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  width: -webkit-fill-available;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.view_menu--options--form {
+  text-align-last: center;
+  width: -webkit-fill-available;
+}
+.register_form {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

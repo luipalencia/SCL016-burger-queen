@@ -199,7 +199,7 @@ _tablet_, pero **no queremos una app nativa**, sino una web app que sea
 **responsive** y pueda funcionar **offline**.
 
 Necesitamos pensar bien en el aspecto UX de de quienes van a tomar los pedidos,
- el tamaño y aspecto de los botones, la visibilidad del estado actual del
+ el tamaño y aspecto de los btn_group, la visibilidad del estado actual del
  pedido, etc.
 
 La aplicación desplegada debe tener 80% o más el las puntuaciones de
