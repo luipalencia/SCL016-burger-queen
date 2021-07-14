@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import handroll from '../data/handroll.js'
 import promos from '../data/promos.js'
-import '../App.css';
+import '../components.css';
 import stores from './firebaseCofig'
 import swal from 'sweetalert';
 import Header from './header.jsx'
@@ -59,7 +59,7 @@ const WaitersView = () => {
       item.quantity = 1;
       setOrders([...orders, item])
     }
-    setCosts(recupero(costs, item.cost, true))
+    setCosts(increaseProduct(costs, item.cost, true))
 
   }
 
@@ -70,19 +70,19 @@ const WaitersView = () => {
       let i = orders.indexOf(item);
       if (item.quantity === 0) orders.splice(i, 1);
       setOrders([...orders])
-      setCosts(recupero(costs, item.cost, false))
+      setCosts(increaseProduct(costs, item.cost, false))
     }
   }
 
-  const recupero = (a, b, c) => c ? Number(a) + Number(b) : Number(a) - Number(b);
+  const increaseProduct = (a, b, c) => c ? Number(a) + Number(b) : Number(a) - Number(b);
 
   return (
     <Fragment>
-      <div className="header">
+      <header className="header">
         <Header></Header>
         <Link to="/cuisine" className="btn btn-dark mt-2 btn_group">Cuisine</Link>
         <Link to="/deliverorders" className="btn mt-2 btn_group btn-danger">Orders</Link>
-      </div>
+      </header>
 
       <div className="header_date">{timing}</div>
 
@@ -91,7 +91,7 @@ const WaitersView = () => {
         <button className="btn btn-dark mt-2 btn_group" onClick={(e) => viewPromos(e)}>Special Offers</button>
       </div>
 
-      {toggler ? <div className="mt-3 view_menu--options">
+      {toggler ? <section className="mt-3 view_menu--options">
         {
           handroll.items.map(item => {
             return (
@@ -109,11 +109,11 @@ const WaitersView = () => {
             );
           })
         }
-      </div>
+      </section>
 
         :
 
-        <div className="mt-3 view_menu--options">
+        <section className="mt-3 view_menu--options">
           {
             promos.items.map(item => {
               return (
@@ -130,9 +130,9 @@ const WaitersView = () => {
               );
             })
           }
-        </div>}
+        </section>}
 
-      <div className="view_menu--options--form">
+      <section className="view_menu--options--form">
         <form className="register_form bg-dark" onSubmit={setUser}>
           <h6>Order Summary</h6>
           <input className="form-control" value={name} onChange={(e) => { setName(e.target.value) }}
@@ -166,7 +166,7 @@ const WaitersView = () => {
             <input className="btn btn-light mt-2 mb-2 btn_group" type='submit' value='proceed' />
           </div>
         </form>
-      </div>
+      </section>
 
     </Fragment>
   );

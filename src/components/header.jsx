@@ -1,4 +1,4 @@
-import '../App.css';
+import '../components.css';
 import { Link } from "react-router-dom";
 import React, { Fragment } from 'react';
 

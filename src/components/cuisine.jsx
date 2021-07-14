@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import '../App.css';
+import '../components.css';
 import stores from './firebaseCofig'
 import { Link } from "react-router-dom";
 import Header from './header.jsx'
@@ -8,33 +8,19 @@ import swal from 'sweetalert';
 const CuisineView = () => {
   const dateOrder = new Date();
   let timing = dateOrder.toLocaleString();
-  const [taskss, setTaskss] = useState([]) 
-
-/*  React.useEffect(() => {
-    const obtenerDatos = async () => {
-      try {
-        const data = await stores.collection('order').get()
-        const arrayData = data.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-        setTaskss(arrayData)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    obtenerDatos()
-  }, [])  */
-
+  const [taskss, setTaskss] = useState([])
 
   useEffect(() => {
-      const getDocsInfo2 = stores.collection('order').onSnapshot(snap => {
-        const arrayOrders = snap.docs.map(doc => {
-          return { 
-          id: doc.id, ...doc.data() 
-          }
-        })
-        setTaskss(arrayOrders)
-        })
-       return () => getDocsInfo2();
-      }, [])
+    const getDocsInfo2 = stores.collection('order').onSnapshot(snap => {
+      const arrayOrders = snap.docs.map(doc => {
+        return {
+          id: doc.id, ...doc.data()
+        }
+      })
+      setTaskss(arrayOrders)
+    })
+    return () => getDocsInfo2();
+  }, [])
 
   const inProcess = async (id) => {
     try {
@@ -45,7 +31,7 @@ const CuisineView = () => {
       console.log(error)
     }
     swal("Great", "The order is in progress", "info");
-    document.querySelector('#process' + id).style.backgroundColor = 'gold';
+    document.querySelector('#process' + id).style.backgroundColor = '#ff5722';
   }
 
   const done = async (id) => {
@@ -57,21 +43,21 @@ const CuisineView = () => {
       console.log(error)
     }
     swal("Excelent", "The order is ready", "success");
-    document.querySelector('#done' + id).style.backgroundColor = 'green';
+    document.querySelector('#done' + id).style.backgroundColor = '#008000';
   }
 
 
   return (
     <Fragment>
-      <div className="header">
+      <header className="header">
         <Header></Header>
         <Link to="/waiters" className="btn btn-dark mt-2 btn_group">Waiters</Link>
         <Link to="/deliverorders" className="btn btn-danger mt-2 btn_group">Orders</Link>
-      </div>
+      </header>
 
       <div className="header_date">{timing}</div>
 
-   <div className="orders_container">
+      <section className="orders_container">
         {
           taskss.map(item => (
             <div key={item.id} className="card bg-light mb-3 mt-3 orders_group">
@@ -83,7 +69,7 @@ const CuisineView = () => {
                 ? <p>Comments: {item.comments}</p>
                 : null}
               <span>
-              <h5 className="card-title">Order summary</h5>
+                <h5 className="card-title">Order summary</h5>
                 {item.orders.map(elemento => (
                   <li key={elemento.id}> {elemento.title} ({elemento.quantity}) </li>
                 ))
@@ -96,7 +82,7 @@ const CuisineView = () => {
             </div>
           ))
         }
-      </div>
+      </section>
     </Fragment >
   )
 }

@@ -1,4 +1,4 @@
-import './App.css';
+import './components.css';
 import React, { Fragment } from 'react'
 import WaitersView from './components/waiters.jsx'
 import Home from './components/home.jsx'
